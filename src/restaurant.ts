@@ -16,20 +16,38 @@ export async function restaurantUi() {
   ]);
 
   switch (mainMenu.action) {
-    case 'Order':
-        console.log()
-        break;
-    case 'View Cart':
-        console.log()
-        break;
-    case 'View Coupon':
-        console.log()
-        break;
-    case 'Apply Coupon':
-        console.log()
-        break;
-    case 'Exit':
-        process.exit(0);
+    case "Order":
+      await order();
+      break;
+    case "View Cart":
+      console.log();
+      break;
+    case "View Coupon":
+      console.log();
+      break;
+    case "Apply Coupon":
+      console.log();
+      break;
+    case "Exit":
+      process.exit(0);
   }
   restaurantUi();
 }
+
+const order = async () => {
+  const orderList = await inquirer.prompt([
+    {
+      type: "checkbox",
+      name: "order",
+      message: "What would you like to order?",
+      choices: menuList.map((item) => {
+        return {
+          name: `${item.name} - $${item.price}`,
+          value: item,
+        };
+      })
+    },
+  ]);
+  
+  console.log(orderList.order)
+};
