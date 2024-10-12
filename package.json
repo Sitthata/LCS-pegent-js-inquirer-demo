@@ -6,7 +6,8 @@
     "sim-calc": "./src/cli/calculator.js"
   },
   "scripts": {
-    "start": "bun run src/index.ts"
+    "start": "bun run src/index.ts",
+    "build": "bun build src/products.ts --compile --outfile=products"
   },
   "devDependencies": {
     "@types/bun": "latest",
