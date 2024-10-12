@@ -56,3 +56,5 @@ const viewProduct = async () => {
   console.log("Product List");
   console.table(products);
 };
+
+productUi()

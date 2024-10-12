@@ -2,6 +2,9 @@
   "name": "js-inquirer-demo",
   "module": "index.ts",
   "type": "module",
+  "bin": {
+    "sim-calc": "./src/cli/calculator.js"
+  },
   "scripts": {
     "start": "bun run src/index.ts"
   },
@@ -13,6 +16,8 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "commander": "^12.1.0",
     "inquirer": "^10.2.0"
-  }
+  },
+  "keywords": ["calculator", "cli", "commander.js"]
 }
